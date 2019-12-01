@@ -1,0 +1,96 @@
+<div class="card mx-auto" id ="card">
+  <div class="text-center mt-5">
+    <h4>Company Account</h4>
+  </div>      
+  <!-- <hr> -->
+  <div class="card-body">   
+    <form #companyForm = "ngForm" (ngSubmit)="onSubmit(companyForm)">
+      <!--Show success message-->
+     <div class="alert text-center" *ngIf="showErrorMessage">
+         Email or RC Number is beign use by another company
+     </div>  
+       <div class="row"> 
+         <div class="col-md-6"> 
+           <div class="form-group">
+               <label for="companyName">Comapany Name</label>
+               <input type="text" name="companyName" id="companyName" #companyName ="ngModel"
+                       [(ngModel)] = "companyService.company.companyName" class="form-control" required >
+                       <div class="errors" *ngIf="companyName.touched && !companyName.valid">
+                          <div *ngIf="companyName.errors.required">Company Name required</div>
+                       </div>
+           </div>
+         </div>
+         <div class="col-md-6">
+           <div class="form-group">
+             <label for="rcNumber">RC Number</label>
+             <input type="text" name="rcNumber" id="rcNumber" #rcNumber="ngModel" 
+                     [(ngModel)]="companyService.company.rcNumber" class="form-control" required>
+                     <div class = "errors"  *ngIf="rcNumber.touched && !rcNumber.valid">
+                      <div *ngIf = "rcNumber.errors.required">RC Number required</div>
+                    </div>
+           </div>
+         </div>
+         <div class="col-md-6"> 
+           <div class="form-group">
+             <label for="email">Email Address</label>
+             <input type="text" name="email" id="email" #email = "ngModel" 
+             [(ngModel)]="companyService.company.email" class="form-control" required>
+             <div class="errors" *ngIf="email.touched && !email.valid">
+                <div *ngIf="email.errors.required">Email Address required</div>
+              </div>
+           </div>  
+         </div>
+         <div class="col-md-6">
+           <div class="form-group">
+             <label for="phoneNumber">Phone Number</label>
+             <input type="text" name="phoneNumber" id="phoneNumber" #phoneNumber ="ngModel" 
+                    [(ngModel)]="companyService.company.phoneNumber" class="form-control" required >
+             <div class="errors" *ngIf="phoneNumber.touched && !phoneNumber.valid">
+              <div *ngIf="phoneNumber.errors.required">PhoneNumber required</div>
+              <!-- pattern="[0-9]+" -->
+            </div>
+           </div>
+         </div>
+         <div class="col-md-6"> 
+             <div class="form-group"> 
+               <label for="password">Password</label>
+               <input type="password" name="password" id="password" #password = "ngModel"
+                       [(ngModel)] = "companyService.company.password" 
+                       class="form-control" required minlength="8">
+                  <div class="errors" *ngIf="password.touched && !password.valid">
+                    <div *ngIf="password.errors.required">Password is required</div>
+                    <div *ngIf="password.errors.minlength">
+                      Minimum of {{password.errors.minlength.requiredLength}} characters required
+                    </div>
+                  </div>
+             </div>
+         </div>
+         <div class="col-md-6"> 
+             <div class="form-group">
+               <label for="confirmPassword">Confirm Password</label>
+               <input type="password" name="confirmPassword" id="confirmPassword" #confirmPassword = "ngModel"
+                       [(ngModel)] = "companyService.company.confirmPassword" class="form-control" required>
+             </div>
+         </div>  
+         <div class="col-md-12">
+             <div class="form-group">
+               <label for="address1">Comapany Address</label>
+               <input type="textarea" name="address1" id="address1" #address1 = "ngModel" 
+               [(ngModel)]="companyService.company.address1" class="form-control" required>
+               <div class="errors" *ngIf="address1.touched && !address1.valid">
+                  <div *ngIf="address1.errors.required">Address is required</div>
+               </div>
+             </div>
+         </div>    
+       </div> 
+       <div class="d-flex justify-content-end">
+           <button type="submit"  class="btn btn-submit">Submit</button>
+       </div>
+       <div class="d-flex justify-content-center">
+         <a routerLink = "/signup/customer-profile">Personal Pizza Profile </a>
+       </div> 
+     </form>  
+  </div>
+</div>
+
+

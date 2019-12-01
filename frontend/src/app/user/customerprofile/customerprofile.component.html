@@ -1,0 +1,69 @@
+<div class="card mx-auto" id ="card">
+  <div class="text-center mt-5">
+    <h4>Customer Profile</h4>
+  </div>
+  <!-- <hr> -->
+  <div class="card-body">   
+    <form  autocomplete="off">
+      <!--Show error message-->
+      <div class="alert text-center" *ngIf="showErrorMessage">
+         Record already exist
+       </div>
+       <!--End-->     
+     <div class="row">
+       <div class="col-md-6"> 
+         <div class="form-group">
+           <label>First Name</label>
+           <input type="text" name="firstName" #firstName = "ngModel"
+                   [(ngModel)] = "customerData.firstName" class="form-control">
+         </div>
+       </div>
+       <div class="col-md-6">
+         <div class="form-group">
+             <label>Last Name</label>
+             <input type="text" name="lastName" #lastName = "ngModel" 
+                   [(ngModel)]="customerData.lastName" class="form-control"  >
+         </div>
+       </div>
+       <div class="col-md-6">
+         <div class="form-group">
+             <label>Email Address</label>
+             <input type="text" name="email" #email="ngModel"
+                     [(ngModel)]="customerData.email" class="form-control">
+         </div>
+       </div>
+       <div class="col-md-6">
+         <div class="form-group">
+           <label>Phone Number</label>
+           <input type="text" name="phoneNumber" #phoneNumber
+                   [(ngModel)]="customerData.phoneNumber" class="form-control" >
+         </div>
+       </div>
+       <div class="col-md-6"> 
+           <div class="form-group">
+             <label>Password</label>
+             <input type="password" name="password" #password = "ngModel"
+                     [(ngModel)] = "customerData.password" 
+                     class="form-control">
+           </div>
+       </div>
+       <div class="col-md-6"> 
+           <div class="form-group">
+             <label>Confirm Password</label>
+             <input type="password" class="form-control">
+           </div> 
+       </div>
+     </div>      
+     <div class="d-flex justify-content-end ">
+        <button type="submit"  class="btn btn-submit" (click)="onSubmit()">Submit</button>
+     </div> 
+   </form>
+  </div>
+</div>
+
+
+  
+  
+  
+
+

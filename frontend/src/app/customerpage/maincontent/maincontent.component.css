@@ -1,0 +1,194 @@
+
+/* ============== spacing ============== */
+.padding-y {
+  padding-top: 32px;
+  padding-bottom: 32px; }
+
+.bg {
+  background-color: #f6f6f6 !important; }
+
+/* --------- description list --------*/
+[class*="dlist-"] {
+  margin-bottom: 5px; }
+  [class*="dlist-"] dd {
+    margin-bottom: 0; }
+.scroll{
+  height: 35rem;
+  overflow-y: scroll;
+}
+.dlist-inline dt, .dlist-inline dd {
+  display: inline-block; }
+
+.dlist-align dt {
+  width: 90px;
+  float: left;
+  word-wrap: break-word; }
+.dlist-align dd {
+  margin-left: 120px;
+  vertical-align: baseline; }
+
+/* -------------------- list.row--------------------- */
+ul.row, ul.row-sm {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0; }
+
+/* ================= lists ================= */
+[class*="list-"] li:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  overflow: hidden;
+  height: 0;
+  clear: both; }
+
+.list-lg li {
+  margin-bottom: 10px; 
+}
+
+.btn-buy{
+  background: #2c3e50;
+  color: #ffffff;
+}
+.btn-back{
+  margin-bottom: 1px;
+  border-color: #2c3e50;
+}
+
+.custom-range{
+  color: #2c3e50;
+}
+
+.btn-filter{
+  background: #2c3e50;
+  color: #ffffff;
+}
+
+.btn-apply{
+  background: #2c3e50;
+  color: #ffffff;
+}
+
+.check-label{
+  text-align: center;
+}
+/* .item-count{
+  padding: 0 2px;
+ 
+} */
+.card-product {
+  margin-bottom: 1rem;
+  /* btn-overlay-bottom */ }
+
+  .card-product:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden; }
+
+  .card-product .img-wrap {
+    border-radius: 0.2rem 0.2rem 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    text-align: center; }
+
+  .card-product .img-wrap img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
+    -o-object-fit: cover;
+        object-fit: cover; }
+
+  .card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 1px solid #eee; }
+
+  .card-product .action-wrap {
+    padding-top: 4px;
+    margin-top: 4px; }
+
+  .card-product .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #eee; 
+  }
+
+  .card-product .title {
+    margin-top: 0; 
+  }
+
+  .card-product .btn-overlay {
+    -webkit-transition: .5s;
+    transition: .5s;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.5); 
+  }
+
+
+  .card-product:hover .btn-overlay {
+    opacity: 1; 
+  }
+
+.card-product:hover {
+  -webkit-box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+          box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+  -webkit-transition: .5s;
+  transition: .5s; 
+}
+
+.card-sm .img-wrap {
+  height: 180px; 
+}
+
+.card .img-wrap { 
+  overflow: hidden;
+ }
+
+.price-old {
+  color: #000; 
+}
+
+.list-group .list-group-item {
+  padding-bottom: .5rem; 
+}
+
+.list-group .title {
+  margin-top: 5px;
+  margin-bottom: 12px; 
+}
+
+.card-header .title {
+  margin-bottom: 0;
+  line-height: 1.5; 
+}
+
+.card-group-item {
+  border-bottom: 1px solid #dee2e6; 
+}
+
+  .card-group-item .card-header {
+    border-bottom: 0;
+    background-color: #f9f9f9; 
+  }
+
+  .card-group-item:last-child {
+    border-bottom: 0; 
+  }
+
+/* --------- media element --------*/
+ .img-wrap {
+  margin-right: 1rem; }
+
+/* ================= RATINGS ============== */
+

@@ -1,0 +1,30 @@
+.card{
+  
+    width: 70%;
+    margin-top: 50px;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 40px; 
+    place-content: center;
+    
+  }
+  .card:hover  {
+    opacity: 1; 
+  }
+  
+  .card:hover {
+    -webkit-box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+            box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+    -webkit-transition: .5s;
+    transition: .5s; 
+  }
+  h1{
+    color: green;
+  }
+  .btn-ok{
+    background: #2c3e50;
+    color: #ffffff;
+    font-size: 18px;
+    width: 8rem;
+    border-radius: 25px;
+  }

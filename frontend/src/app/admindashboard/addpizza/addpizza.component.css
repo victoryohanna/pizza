@@ -1,0 +1,58 @@
+.card{
+    background: #ffffff;
+    color: #000000;
+    place-content: center;
+    -webkit-box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+            box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+    -webkit-transition: .5s;
+    transition: .5s; 
+    
+  }
+
+input,
+select{
+    height: 30px;
+}
+
+#pizzaimg{
+    margin-top: 2px;
+    display: none;
+}
+.btn-img{
+    background-color: #384552;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 15px;
+    width: 8rem;
+    margin-top: 3px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.image-container{
+    cursor: pointer;
+}
+.btn-submit{
+    background: #2c3e50;
+    color: #ffffff;
+    font-size: 18px;
+    width: 8rem;
+    border-radius: 25px;
+}
+.imgs{
+    margin-left: 0px;
+}
+.success{
+    color: forestgreen;
+}
+.alert{
+    color: red;
+}
+/* .img-container{
+    margin-top: 2px;
+} */
+.img-preview{
+    background: center center no-repeat;
+    background-size: contain;
+    height: 116px;
+    width: 250px;
+}

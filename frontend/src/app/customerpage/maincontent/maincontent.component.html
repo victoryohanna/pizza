@@ -1,0 +1,108 @@
+<div class="d-flex justify-content-end">
+  <button class="btn btn-back" (click)="onNavBack()" [hidden]="count == 0">Back</button>
+</div>
+<div class="row " [hidden]="count == 1">   
+<aside class="col-sm-3">
+  <div class="card card-filter">
+    <article class="card-group-item">   
+      <header class="card-header">
+        <a class="" aria-expanded="true" href="#" data-toggle="collapse" data-target="#collapse22">
+          <i class="icon-action fa fa-chevron-down"></i>
+          <h6 class="title">By Category</h6>
+        </a>
+      </header>
+      <div class="filter-content collapse show" id="collapse22">
+        <div class="card-body">
+          <form class="pb-3">
+          <div class="input-group">
+            <input class="form-control" placeholder="Search" type="text" name = "searchItem" [(ngModel)] = "searchItem">
+            <div class="input-group-append">
+              <button class="btn btn-filter" type="button"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+          </form>  
+          <ul class="list-unstyled list-lg">
+              <!-- Margarita -->  
+            <li><a  routerLink = "">Meatza<span class="float-right badge badge-light round">142</span></a></li>
+            <li><a  routerLink = ""> Margarita <span class="float-right badge badge-light round">133</span>  </a></li>
+            <li><a  routerLink = "">Classic <span class="float-right badge badge-light round">132</span>  </a></li>
+            <li><a  routerLink = "">Premium <span class="float-right badge badge-light round">121</span>  </a></li>
+            <li><a  routerLink = "">Favourites <span class="float-right badge badge-light round">224</span>  </a></li>
+            <li><a  routerLink = "">Side Items <span class="float-right badge badge-light round">267</span>  </a></li>
+          </ul>  
+        </div>
+      </div>
+    </article> 
+    <article class="card-group-item">
+      <header class="card-header">
+        <a href="#" data-toggle="collapse" data-target="#collapse33">
+          <i class="icon-action fa fa-chevron-down"></i>
+          <h6 class="title">By Price  </h6>
+        </a>
+      </header>
+      <div class="filter-content collapse show" id="collapse33">
+        <div class="card-body">
+          <input type="range" class="custom-range" min="0" max="100" name="">
+          <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Min</label>
+            <input class="form-control" placeholder="0" type="number">
+          </div> 
+          <div class="form-group text-right col-md-6">
+            <label>Max</label>
+            <input class="form-control" placeholder="N20000" type="number">
+          </div>
+          </div> 
+          <button class="btn btn-block btn-apply">Apply</button>
+        </div> 
+      </div>  
+    </article> 
+  </div> 
+</aside>   
+<main class="col-sm-9 scroll">
+  <article class="card card-product" *ngFor=" let product of productList |filter: searchItem 
+                  | paginate: { itemsPerPage: 5, currentPage: p }" >
+    <div class="card-body">
+    <div class="row">  
+      <aside class="col-sm-3"> 
+        <div class="img-wrap"><img [src]="imageLink(product.productImage)" class="image-thumbnail"></div>
+      </aside>
+      <article class="col-sm-6"> 
+          <h4 class="title" >{{product.productTitle}}</h4>
+          <h5>Description:</h5>
+          <p name = "description" >{{product.description}}</p>
+          <dl class="dlist-align">
+            <dt>Size</dt>
+            <dd>{{product.size}}</dd>
+          </dl>  
+          <dl class="dlist-align">
+            <dt>Price</dt>
+            <dd><span class="price"><del class="price-old">N</del>{{product.price}}</span></dd>
+          </dl>
+          <dl class="dlist-align">
+            <dt>Delivery</dt>
+            <dd>Abuja</dd> 
+          </dl>
+      </article>
+      <aside class="col-sm-3 border-left">
+        <div class="action-wrap">
+            <h6><b>Company Name</b></h6>
+            <p class="text "> {{product.companyName}} </p>
+          <br>
+          <hr>
+         <div class="d-flex justify-content-end">
+            <button  class="btn btn-buy"  (click)="showOrder(product)"> Select </button>
+         </div>   
+        </div>
+      </aside> 
+    </div> 
+    </div> 
+  </article>  
+</main> 
+</div><!--class row end-->
+<div [hidden]="count == 0">
+  <app-order></app-order>  
+</div>
+<div class="text-center mt-3" >
+  <pagination-controls (pageChange)="p = $event" [hidden]= "count == 1" ></pagination-controls>
+</div>

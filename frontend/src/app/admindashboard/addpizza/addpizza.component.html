@@ -1,0 +1,72 @@
+<div class="text-center mt-2">
+    <h3>New Product</h3> 
+</div>
+<div class="card"> 
+  <div class="card-body">
+    <div class="success text-center" *ngIf="showSuccessMessage">
+      Product Saved Successfuly
+    </div>  
+    <div class="alert text-center" *ngIf="showErrorMessage">
+        Error!! Product Not Saved
+      </div>
+    <form #productForm = "ngForm" (ngSubmit) = "onSubmit()" enctype="multipart/form-data">
+      <div class="row">  
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Product Name:</label>
+            <input type="text"  [(ngModel)]="title " name ="title"  class="form-control" required >
+            <!-- <div class="errors" *ngIf="title.touched && !title.valid">
+              <div *ngIf="title.errors.required"> Name required</div>
+           </div> -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group"> 
+            <label>Size:</label>
+            <select type="text"  [(ngModel)]="size" name ="size" class="form-control" required>
+              <option value="">Select Size</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+            <!-- <div class=" errors" *ngIf="size.touched && !size.valid">
+              <div *ngIf=" size.errors.required">Size required</div>
+           </div> -->
+          </div>
+        </div> 
+        <div class="col-md-6">
+          <div class="form-group">
+              <label>Price:</label>   
+              <input type="text"  [(ngModel)]="price" name ="price" class="form-control" required>
+              <!-- <div class="errors" *ngIf="price.touched && !price.valid">
+                <div *ngIf="price.errors.required"> Price required</div>
+             </div> -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Description</label>
+            <input type="textarea"  name ="description"  [(ngModel)]="description" 
+                   class="form-control" style=" height: 80px;" required>
+            <!-- <div class="errors" *ngIf="description.touched && !description.valid">
+              <div *ngIf="description.errors.required">Product Description required</div>
+           </div> -->
+          </div>
+        </div> 
+      </div>
+      <div class="col-md-6 img-container">
+        <div class=" form-group imgs">
+          <img [src] = "imageUrl"  style="width: 180px; height:140px" > 
+          <br>
+          <label class="image-container btn btn-img">  
+            <span>Select Image</span>
+          <input type="file" name="productImage" id="pizzaimg" (change)="fileInput($event.target.files)">
+          </label>
+        </div>
+      </div>  
+      <div class="d-flex justify-content-end">
+        <button type="submit"  class="btn btn-submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

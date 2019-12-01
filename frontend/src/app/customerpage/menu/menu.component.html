@@ -1,0 +1,43 @@
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content bg padding-y border-top">
+  <div class="container">
+    <div class="row">
+      <main class="col-lg-12">
+          <input type="text" [(ngModel)] = "searchText" placeholder="Search" class="search">
+        <div class="card">
+          <table class="table table-hover shopping-cart-wrap">
+            <thead class="text-muted">
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Name</th>
+                <th scope="col">Size</th>
+                <th scope="col">Price</th>
+                <th scope="col" >Description</th>
+                <th scope="col" ></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let list of prodService.lists |filter: searchText | paginate: { itemsPerPage: 4, currentPage: p }">
+                <td>
+                  <div class="img-wrap"><img [src]="imageLink(list.productImage)" class="img-thumbnail img-sm"></div>
+                </td>
+                <td>{{list.title}}</td>
+                <td>{{list.size}}</td>
+                <td>{{list.price}}</td>
+                <td>{{list.description}}</td>
+                <td>
+                  <button class="btn btn-outline-success">Select</button>
+                  <!-- <a href="" class="btn btn-outline-danger"> ×Remove</a>  -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div> 
+      </main> 
+    </div>
+  </div> 
+</section>
+  <!-- ========================= SECTION CONTENT END// ========================= -->
+  <div class="text-center mt-3">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>

@@ -1,0 +1,35 @@
+<div class="main-body">
+  <div class="container ">
+    <div class="row">
+      <aside class="col-sm-3 quick-links">
+        <div class="card card-filter">
+          <article class="card-group-item">   
+            <header class="card-header">
+              <a class="" aria-expanded="true" href="#" data-toggle="collapse" data-target="#collapse22">
+                <!-- <i class="icon-action fa fa-chevron-down"></i> -->
+                <h5 class="title">Quick Links</h5>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse22">
+              <div class="card-body">  
+                <div class="list-group">
+                  <ul class="list-unstyled list-lg">
+                    <li><a routerLink = "transactions">Transactions<span class="float-right badge badge-light round"></span></a></li>
+                    <li><a routerLink = "addpizza" >New Product <span class="float-right badge badge-light round"></span>  </a></li>
+                    <li><a routerLink = "staff">New Staff <span class="float-right badge badge-light round"></span>  </a></li>
+                    <li><a routerLink = "products">All Products <span class="float-right badge badge-light round"></span>  </a></li>
+                    <li><a routerLink = "staffs/list">All Staffs <span class="float-right badge badge-light round"></span>  </a></li>
+                    <li><a routerLink = "order">Manage Order <span class="float-right badge badge-light round"></span>  </a></li>
+                  </ul>  
+                </div>
+              </div>  
+            </div>
+          </article> 
+        </div> 
+      </aside>
+      <div class="col-md-9 ">
+        <router-outlet></router-outlet>
+      </div> 
+    </div>
+  </div>
+</div>

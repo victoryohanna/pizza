@@ -1,0 +1,49 @@
+<div class="card mx-auto" id ="card">
+  <div class="text-center mt-3">
+    <h4>Customer</h4>
+  </div> 
+  <hr>
+  <div class="card-body">   
+    <form >
+        <div class="alert text-center" *ngIf="showErrorMessage">
+            Invalid Email or password
+        </div>
+        <!--End--> 
+      <div class="row">  
+        <div class="col-md-12 mx-auto">
+            <div class="form-group">    
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" [(ngModel)]="loginData.email"
+                      class="form-control" #email="ngModel" placeholder="Customer Email Address" 
+                      required minlength="" pattern="" onfocus="">
+                <div class="errors" *ngIf="email.touched && !email.valid">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                </div>
+            </div>
+          </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="loginData.password"
+                    class="form-control" #password="ngModel" placeholder="Customer Password" 
+                    required minlength="8">
+              <div class="errors" *ngIf="password.touched && !password.valid">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">
+                  Minimum of {{password.errors.minlength.requiredLength}} characters required
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end ">
+          <button type="submit"  class="btn btn-submit" (click)="onSubmit()">Submit</button>
+      </div> 
+      <div class="text-center mt-2 ">
+        <a routerLink="/signup">Create Account</a>
+      </div>
+    </form> 
+  </div>
+</div>
+
+

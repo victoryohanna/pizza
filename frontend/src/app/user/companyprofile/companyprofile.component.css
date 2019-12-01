@@ -1,0 +1,88 @@
+.card{
+  width: 70%;
+  margin-top: 30px;
+  background: #2c3e50;
+  color: #000000;
+  /* width:100% */
+  place-content: center;
+
+}  
+.card:hover  {
+  opacity: 1; 
+}
+hr{
+  background: #ffffff;
+}
+.text-center{
+  color: #ffffff;
+}
+.card:hover {
+  -webkit-box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+          box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+  -webkit-transition: .5s;
+  transition: .5s; 
+}
+.btn-submit{
+  background: #f1f1f1;
+  color: #000000;
+  font-size: 18px;
+  width: 8rem;
+  border-radius: 25px;
+}
+.form-control{
+  background: transparent;
+  border-bottom: 1px solid #ffffff;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0px;
+  color: #ffffff;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  outline: none !important;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .form-control {
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}
+.form-control:focus{
+  border-bottom-color: green;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+  outline: 0px !important;
+ 
+}
+.form-control.ng-touched.ng-invalid{
+  border-bottom: 1px solid red;
+ 
+}
+.errors{
+  text-align: center;
+  color: red;
+}
+input::-moz-focus-inner { 
+  border: 0; 
+  color: #ffffff;
+}
+.alert{
+  color: red;
+  font-size: 18px;
+  font-family: Segoe UI, 'Tahoma', Geneva, Verdana, sans-serif;
+}
+form{
+  margin: 10px 30px; 
+}
+label {
+  color:  #ffffff;
+  display: block;
+  font-size: 14px;
+  height: 16px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}

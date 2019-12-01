@@ -1,0 +1,49 @@
+<div class="card mx-auto" id ="card">
+  <div class="text-center mt-3">
+    <h4> Admin</h4>
+  </div>
+  <!-- <hr>    -->
+  <div class="card-body d-flex justify-content-center">   
+    <form >
+      <!--Show error Message-->   
+      <div class="alert text-center" *ngIf="showErrorMessage">
+          Invalid Email or password
+      </div>
+      <!--End-->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="loginData.email"
+                    class="form-control" placeholder="Company Email" 
+                    required minlength="" pattern="">
+                    <div class="errors" *ngIf="email.touched && !email.valid">
+                      <div *ngIf="email.errors.required">Email is required</div>
+                    </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" #password="ngModel" [(ngModel)]="loginData.password"
+                    class="form-control" placeholder="Company Password" required minlength="8">
+                    <div class="errors" *ngIf="password.touched && !password.valid">
+                      <div *ngIf="password.errors.required">Password is required</div>
+                      <div *ngIf="password.errors.minlength">
+                        Minimum of {{password.errors.minlength.requiredLength}} characters required
+                      </div>
+                    </div>
+          </div>    
+        </div>
+      </div>
+      <div class="d-flex justify-content-end ">
+          <button type="submit"  class="btn btn-submit" (click)="logUser()">Submit</button>
+      </div> 
+      <div class="text-center mt-2 "> 
+        <a class="nav-link" routerLink="">Forget Password</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+

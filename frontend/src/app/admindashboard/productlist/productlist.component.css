@@ -1,0 +1,33 @@
+.card{
+    background: #ffffff;
+    color: #000000;
+    place-content: center;
+    -webkit-box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+            box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+    -webkit-transition: .5s;
+    transition: .5s; 
+    
+  }
+ 
+.search-bar{
+    margin-top: 15px;
+    width: 30%;
+    border-radius: 3px;
+  }
+  /* .scroll{
+      
+  } */
+  .img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto; 
+}
+.img-wrap{
+    height: 90px;
+    width: 90px;
+}
+
+

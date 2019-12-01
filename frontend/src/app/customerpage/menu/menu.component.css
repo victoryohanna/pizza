@@ -1,0 +1,11 @@
+.search{
+    text-align: end;
+    border-radius: 3px;
+    margin: 5px;
+    width: 40%;
+}
+
+.img-wrap{
+    height: 90px;
+    width: 90px;
+}
