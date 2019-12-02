@@ -8,7 +8,7 @@ const path = require('path');
 const port = process.env.PORT || 8080;   
 
 //const url = 'mongodb://localhost:27017/meandb';
-const url = 'mongodb+srv://victoryohanna:tanams5562@cluster0-pizvr.mongodb.net/test?retryWrites=true&w=majority'
+const url = 'mongodb+srv://email:password@cluster0-pizvr.mongodb.net/test?retryWrites=true&w=majority'
 const app = express();
 
 
